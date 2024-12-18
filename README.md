@@ -22,7 +22,7 @@
 - Designed with a responsive and mobile-friendly layout.  
 
 ## 📄 License  
-This project is licensed under the **Eclipse Public License 2.0**. For more details, read the [LICENSE](LICENSE) file.  
+This project is licensed under the **OpenGuardLicense 2.0**. For more details, read the [LICENSE](LICENSE) file.  
 
 ## 🛠️ Developer Notes  
 - Built with pure HTML, CSS, and JavaScript.  
