@@ -284,7 +284,7 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*ÄÖÜ";
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
 const fontSize = 14;
 const columns = canvas.width/fontSize;
 const drops = new Array(Math.floor(columns)).fill(1);
@@ -385,7 +385,7 @@ class DECYXCipher {
     encrypt(t) {
         try {
             if (!t || t.trim() === '') return 'Y31mIjViUFs=';
-            const s = t;
+            const s = t;  // Removed the non-ASCII filter to allow äüö
             const c = btoa(encodeURIComponent(s));
             const e = this._p(c, 1);
             const d = this._p(e, 1);
