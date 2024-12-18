@@ -385,7 +385,7 @@ class DECYXCipher {
     encrypt(t) {
         try {
             if (!t || t.trim() === '') return 'Y31mIjViUFs=';
-            const s = t;  // Removed the non-ASCII filter to allow äüö
+            const s = t;
             const c = btoa(encodeURIComponent(s));
             const e = this._p(c, 1);
             const d = this._p(e, 1);
