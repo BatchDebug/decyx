@@ -284,7 +284,7 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
 const fontSize = 14;
 const columns = canvas.width/fontSize;
 const drops = new Array(Math.floor(columns)).fill(1);
@@ -317,7 +317,7 @@ function animateHeader() {
     let currentState = "normal";
     
     function encryptText(text) {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
         let iterations = 0;
         const maxIterations = 15;
         let progress = 0;
@@ -385,7 +385,7 @@ class DECYXCipher {
     encrypt(t) {
         try {
             if (!t || t.trim() === '') return 'Y31mIjViUFs=';
-            const s = t.replace(/[^\x00-\x7F]/g, '');
+            const s = t;
             const c = btoa(encodeURIComponent(s));
             const e = this._p(c, 1);
             const d = this._p(e, 1);
@@ -422,7 +422,7 @@ class DECYXCipher {
 }
 
 function animateEncryption(element, finalText) {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
     let iterations = 0;
     const maxIterations = 15;
     let progress = 0;
