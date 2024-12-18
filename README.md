@@ -1,9 +1,7 @@
 # DECYX - Advanced Encryption System  
 **DECYX** is a cutting-edge encryption tool designed to protect your sensitive data with robust algorithms and an engaging cyberpunk interface.  
 
-## 🔥 Features  
-- **AES Encryption/Decryption**  
-  Secure your text with an optional key or encrypt without one for ease of use.  
+## 🔥 Features   
 - **Glitchy Cyberpunk UI**  
   Experience an animated, hacker-themed interface inspired by the Matrix.  
 - **Live Matrix Animation**  
