@@ -1,261 +1,250 @@
-<html><head><base href=".">
+<html><head><base href="." />
 <title>DECYX - Advanced Encryption System</title>
 <style>
-.decrypted-link {
-    color: #0f0;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: all 0.3s;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-.decrypted-link:hover {
-    text-shadow: 0 0 5px #0f0;
-    color: #00ff00;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #0f0;
+        font-family: 'Share Tech Mono', monospace;
+        overflow-x: hidden;
+    }
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #0f0;
-    font-family: 'Share Tech Mono', monospace;
-    overflow-x: hidden;
-}
+    .logo-wrapper {
+        overflow: hidden;
+        margin: 20px 0;
+        position: relative;
+    }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+    .logo {
+        text-align: center;
+        font-size: 4.5em;
+        letter-spacing: 15px;
+        text-shadow: 0 0 10px #0f0;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: visible;
+        padding: 10px 0;
+        min-height: 100px;
+    }
 
-.logo-wrapper {
-    overflow: hidden;
-    margin: 20px 0;
-    position: relative;
-}
+    .logo-text {
+        display: inline-block;
+        animation: headerEncrypt 3s infinite;
+        white-space: nowrap;
+    }
 
-.logo {
-    text-align: center;
-    font-size: 4.5em;
-    letter-spacing: 15px;
-    text-shadow: 0 0 10px #0f0;
-    margin-bottom: 40px;
-    position: relative;
-    overflow: visible;
-    padding: 10px 0;
-    min-height: 100px;
-}
+    @keyframes headerEncrypt {
+        0%, 100% { opacity: 1; }
+        45% { opacity: 1; }
+        50% { opacity: 0.7; }
+        55% { opacity: 1; }
+        95% { opacity: 1; }
+    }
 
-.logo-text {
-    display: inline-block;
-    animation: headerEncrypt 3s infinite;
-    white-space: nowrap;
-}
+    .cyber-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin: 10px 0;
+        background: rgba(0, 255, 0, 0.05);
+        border: 1px solid #0f0;
+        color: #0f0;
+        font-family: 'Share Tech Mono', monospace;
+        position: relative;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+    }
 
-@keyframes headerEncrypt {
-    0%, 100% { opacity: 1; }
-    45% { opacity: 1; }
-    50% { opacity: 0.7; }
-    55% { opacity: 1; }
-    95% { opacity: 1; }
-}
+    .cyber-input:focus {
+        outline: none;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+        background: rgba(0, 255, 0, 0.1);
+    }
 
-.cyber-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px;
-    margin: 10px 0;
-    background: rgba(0, 255, 0, 0.05);
-    border: 1px solid #0f0;
-    color: #0f0;
-    font-family: 'Share Tech Mono', monospace;
-    position: relative;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
+    .cyber-button {
+        width: 100%;
+        padding: 15px;
+        background: transparent;
+        border: 1px solid #0f0;
+        color: #0f0;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 10px 0;
+        position: relative;
+        overflow: hidden;
+    }
 
-.cyber-input:focus {
-    outline: none;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-    background: rgba(0, 255, 0, 0.1);
-}
+    .cyber-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(0, 255, 0, 0.2);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: width 0.6s, height 0.6s;
+    }
 
-.cyber-button {
-    width: 100%;
-    padding: 15px;
-    background: transparent;
-    border: 1px solid #0f0;
-    color: #0f0;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 10px 0;
-    position: relative;
-    overflow: hidden;
-}
+    .cyber-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
 
-.cyber-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(0, 255, 0, 0.2);
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    transition: width 0.6s, height 0.6s;
-}
+    .cyber-button:hover {
+        background: rgba(0, 255, 0, 0.1);
+        text-shadow: 0 0 5px #0f0;
+    }
 
-.cyber-button:hover::before {
-    width: 300px;
-    height: 300px;
-}
+    .result {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #0f0;
+        word-wrap: break-word;
+        word-break: break-all;
+        position: relative;
+        background: rgba(0, 255, 0, 0.05);
+        animation: borderPulse 2s infinite;
+        white-space: pre-wrap;
+        min-height: 20px;
+        line-height: 1.4;
+        box-sizing: border-box;
+        width: 100%;
+        overflow-wrap: break-word;
+        flex-grow: 1;
+        margin: 0;
+        height: 100%;
+    }
 
-.cyber-button:hover {
-    background: rgba(0, 255, 0, 0.1);
-    text-shadow: 0 0 5px #0f0;
-}
+    .result-container {
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+    }
 
-.result {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #0f0;
-    word-wrap: break-word;
-    word-break: break-all;
-    position: relative;
-    background: rgba(0, 255, 0, 0.05);
-    animation: borderPulse 2s infinite;
-    white-space: pre-wrap;
-    min-height: 20px;
-    line-height: 1.4;
-    box-sizing: border-box;
-    width: 100%;
-    overflow-wrap: break-word;
-    flex-grow: 1;
-    margin: 0;
-    height: 100%;
-}
+    .copy-button {
+        position: absolute;
+        right: -50px;
+        top: 0;
+        transform: none;
+        background: transparent;
+        border: 1px solid #0f0;
+        width: 40px;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
 
-.result-container {
-    position: relative;
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-}
+    .copy-button:hover {
+        background: rgba(0, 255, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
 
-.copy-button {
-    position: absolute;
-    right: -50px;
-    top: 0;
-    transform: none;
-    background: transparent;
-    border: 1px solid #0f0;
-    width: 40px;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
+    .copy-button svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: #0f0;
+        stroke-width: 2;
+        transition: all 0.3s;
+    }
 
-.copy-button:hover {
-    background: rgba(0, 255, 0, 0.1);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-}
+    .copy-button:hover svg {
+        filter: drop-shadow(0 0 2px #0f0);
+    }
 
-.copy-button svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: #0f0;
-    stroke-width: 2;
-    transition: all 0.3s;
-}
+    .copy-feedback {
+        position: absolute;
+        right: -120px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #0f0;
+        font-size: 0.8em;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
 
-.copy-button:hover svg {
-    filter: drop-shadow(0 0 2px #0f0);
-}
+    .copy-feedback.show {
+        opacity: 1;
+    }
 
-.copy-feedback {
-    position: absolute;
-    right: -120px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #0f0;
-    font-size: 0.8em;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
+    .matrix-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
-.copy-feedback.show {
-    opacity: 1;
-}
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.85; }
+        100% { opacity: 1; }
+    }
 
-.matrix-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+    @keyframes glitch {
+        0% { text-shadow: 0 0 10px #0f0; }
+        25% { text-shadow: -1.5px 0 rgba(255,0,0,0.7), 1.5px 1.5px rgba(0,0,255,0.7); }
+        50% { text-shadow: 1.5px -1.5px rgba(255,0,0,0.7), -1.5px 1.5px rgba(0,0,255,0.7); }
+        75% { text-shadow: -1.5px 1.5px rgba(255,0,0,0.7), 1.5px -1.5px rgba(0,0,255,0.7); }
+        100% { text-shadow: 0 0 10px #0f0; }
+    }
 
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.85; }
-    100% { opacity: 1; }
-}
+    @keyframes borderPulse {
+        0% { border-color: #0f0; box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); }
+        50% { border-color: #00ff00; box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); }
+        100% { border-color: #0f0; box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); }
+    }
 
-@keyframes glitch {
-    0% { text-shadow: 0 0 10px #0f0; }
-    25% { text-shadow: -1.5px 0 rgba(255,0,0,0.7), 1.5px 1.5px rgba(0,0,255,0.7); }
-    50% { text-shadow: 1.5px -1.5px rgba(255,0,0,0.7), -1.5px 1.5px rgba(0,0,255,0.7); }
-    75% { text-shadow: -1.5px 1.5px rgba(255,0,0,0.7), 1.5px -1.5px rgba(0,0,255,0.7); }
-    100% { text-shadow: 0 0 10px #0f0; }
-}
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateX(100%); opacity: 0; }
+    }
 
-@keyframes borderPulse {
-    0% { border-color: #0f0; box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); }
-    50% { border-color: #00ff00; box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); }
-    100% { border-color: #0f0; box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); }
-}
+    .security-level {
+        margin: 20px 0;
+        height: 5px;
+        background: #131313;
+        position: relative;
+        overflow: hidden;
+    }
 
-@keyframes shimmer {
-    0% { transform: translateX(-100%); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(100%); opacity: 0; }
-}
+    .security-level::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+        animation: shimmer 1.5s infinite;
+    }
 
-.security-level {
-    margin: 20px 0;
-    height: 5px;
-    background: #131313;
-    position: relative;
-    overflow: hidden;
-}
+    .security-level-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #0f0, #00ff00);
+        transition: width 1s, background 1s;
+        position: relative;
+    }
 
-.security-level::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
-    animation: shimmer 1.5s infinite;
-}
-
-.security-level-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #0f0, #00ff00);
-    transition: width 1s, background 1s;
-    position: relative;
-}
 </style>
 </head>
 <body>
@@ -267,7 +256,7 @@ body {
         <div class="security-level">
             <div class="security-level-fill" id="securityLevel"></div>
         </div>
-        <input type="password" class="cyber-input" id="password" placeholder="Enter encryption key (optional)">
+        <input type="password" class="cyber-input" id="password" placeholder="Enter encryption key (optional)" />
         <textarea class="cyber-input" id="input" rows="5" placeholder="Enter text to encrypt/decrypt"></textarea>
         <button class="cyber-button" onclick="encrypt()">ENCRYPT</button>
         <button class="cyber-button" onclick="decrypt()">DECRYPT</button>
@@ -283,228 +272,251 @@ body {
         </div>
     </div>
 
-<script>const canvas = document.getElementById('matrix');
+<script>
+const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
 window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
+
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
 const fontSize = 14;
-const columns = canvas.width / fontSize;
+const columns = canvas.width/fontSize;
 const drops = new Array(Math.floor(columns)).fill(1);
+
 function drawMatrix() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#0f0';
-  ctx.font = fontSize + 'px monospace';
-  for (let i = 0; i < drops.length; i++) {
-    const text = chars[Math.floor(Math.random() * chars.length)];
-    const alpha = Math.min(1, drops[i] / 50);
-    ctx.fillStyle = `rgba(0, 255, 0, ${alpha})`;
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.985) drops[i] = 0;
-    drops[i]++;
-  }
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#0f0';
+    ctx.font = fontSize + 'px monospace';
+
+    for(let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        const alpha = Math.min(1, drops[i] / 50);
+        ctx.fillStyle = `rgba(0, 255, 0, ${alpha})`;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.985)
+            drops[i] = 0;
+        
+        drops[i]++;
+    }
 }
+
 setInterval(drawMatrix, 33);
+
 function animateHeader() {
-  const logoEl = document.querySelector('.logo');
-  const originalText = "DECYX";
-  let currentState = "normal";
-  function encryptText(text) {
+    const logoEl = document.querySelector('.logo');
+    const originalText = "DECYX";
+    let currentState = "normal";
+    
+    function encryptText(text) {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
+        let iterations = 0;
+        const maxIterations = 15;
+        let progress = 0;
+        
+        const displayEncrypted = "DECYX";
+        
+        const interval = setInterval(() => {
+            let scrambled = '';
+            const remainingLength = text.length - progress;
+            
+            scrambled += text.substring(0, progress);
+            
+            for(let i = 0; i < remainingLength; i++) {
+                scrambled += chars[Math.floor(Math.random() * chars.length)];
+            }
+            
+            logoEl.textContent = scrambled;
+            
+            iterations++;
+            progress = Math.floor((iterations / maxIterations) * text.length);
+            
+            if(iterations >= maxIterations) {
+                clearInterval(interval);
+                logoEl.textContent = text;
+                
+                if(currentState === "normal") {
+                    currentState = "encrypted";
+                    setTimeout(() => {
+                        encryptText(originalText);
+                        currentState = "normal";
+                    }, 1000);
+                }
+            }
+        }, 33);
+    }
+
+    setInterval(() => {
+        if(currentState === "normal") {
+            encryptText("DECYX");
+        }
+    }, 3000);
+}
+
+class DECYXCipher {
+    constructor(key) {
+        const _0x71af2b = "REVDWVgtOTg2NC00ODIxLTg3NTI=";
+        const _0x3b9c8d = "RDNDWVZHQCMKJF4mJigpXys=";
+        this._k = this._gk(key || atob(_0x71af2b));
+        this._s = atob(_0x3b9c8d);
+    }
+
+    _gk(i) {
+        let h = Array.from(i + this._s || "").reduce((h, c) => {
+            return ((h << 5) - h + c.charCodeAt(0)) & 0xFFFFFFFF ^ (h >>> 2);
+        }, 0);
+        
+        for(let j = 0; j < 1000; j++) {
+            h = Array.from(h.toString(16)).reduce((a, b) => {
+                return (((a << 5) - a) + b.charCodeAt(0)) & 0xFFFFFFFF;
+            }, h);
+        }
+        return h.toString(16).padEnd(64, 'f');
+    }
+
+    encrypt(t) {
+        try {
+            if (!t || t.trim() === '') return 'Y31mIjViUFs=';
+            const s = t;
+            const c = btoa(encodeURIComponent(s));
+            const e = this._p(c, 1);
+            const d = this._p(e, 1);
+            return btoa(encodeURIComponent(d));
+        } catch(e) {
+            return 'Y31mIjViUFs=';
+        }
+    }
+
+    decrypt(t) {
+        try {
+            if (!t || t.trim() === '') return '';
+            const d = decodeURIComponent(atob(t));
+            const p1 = this._p(d, 0);
+            const p2 = this._p(p1, 0);
+            return decodeURIComponent(atob(p2)) || '';
+        } catch(e) {
+            return '';
+        }
+    }
+
+    _p(t, e) {
+        try {
+            return Array.from(t).map((c, i) => {
+                const k = this._k[i % this._k.length];
+                const cc = c.charCodeAt(0);
+                const kc = k.charCodeAt(0);
+                return String.fromCharCode(e ? (cc + kc) % 256 : (cc - kc + 256) % 256);
+            }).join('');
+        } catch(e) {
+            return e ? 'Y31mIjViUFs=' : '';
+        }
+    }
+}
+
+function animateEncryption(element, finalText) {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
     let iterations = 0;
     const maxIterations = 15;
     let progress = 0;
-    const displayEncrypted = "DECYX";
+    
+    const originalHeight = element.offsetHeight;
+    const originalWidth = element.offsetWidth;
+    
+    element.style.whiteSpace = 'pre-wrap';
+    element.style.wordBreak = 'break-all';
+    element.style.minHeight = originalHeight + 'px';
+    element.style.width = originalWidth + 'px';
+    
     const interval = setInterval(() => {
-      let scrambled = '';
-      const remainingLength = text.length - progress;
-      scrambled += text.substring(0, progress);
-      for (let i = 0; i < remainingLength; i++) {
-        scrambled += chars[Math.floor(Math.random() * chars.length)];
-      }
-      logoEl.textContent = scrambled;
-      iterations++;
-      progress = Math.floor(iterations / maxIterations * text.length);
-      if (iterations >= maxIterations) {
-        clearInterval(interval);
-        logoEl.textContent = text;
-        if (currentState === "normal") {
-          currentState = "encrypted";
-          setTimeout(() => {
-            encryptText(originalText);
-            currentState = "normal";
-          }, 1000);
+        let scrambled = '';
+        const remainingLength = finalText.length - progress;
+        
+        scrambled += finalText.substring(0, progress);
+        
+        for(let i = 0; i < remainingLength; i++) {
+            scrambled += chars[Math.floor(Math.random() * chars.length)];
         }
-      }
+        
+        element.innerText = scrambled;
+        
+        iterations++;
+        progress = Math.floor((iterations / maxIterations) * finalText.length);
+        
+        if(iterations >= maxIterations) {
+            clearInterval(interval);
+            element.innerText = finalText;
+        }
     }, 33);
-  }
-  setInterval(() => {
-    if (currentState === "normal") {
-      encryptText("DECYX");
-    }
-  }, 3000);
 }
-class DECYXCipher {
-  constructor(key) {
-    const _0x71af2b = "REVDWVgtOTg2NC00ODIxLTg3NTI=";
-    const _0x3b9c8d = "RDNDWVZHQCMKJF4mJigpXys=";
-    this._k = this._gk(key || atob(_0x71af2b));
-    this._s = atob(_0x3b9c8d);
-  }
-  _gk(i) {
-    let h = Array.from(i + this._s || "").reduce((h, c) => {
-      return (h << 5) - h + c.charCodeAt(0) & 0xFFFFFFFF ^ h >>> 2;
-    }, 0);
-    for (let j = 0; j < 1000; j++) {
-      h = Array.from(h.toString(16)).reduce((a, b) => {
-        return (a << 5) - a + b.charCodeAt(0) & 0xFFFFFFFF;
-      }, h);
-    }
-    return h.toString(16).padEnd(64, 'f');
-  }
-  encrypt(t) {
-    try {
-      if (!t || t.trim() === '') return 'Y31mIjViUFs=';
-      const s = t;
-      const c = btoa(encodeURIComponent(s));
-      const e = this._p(c, 1);
-      const d = this._p(e, 1);
-      return btoa(encodeURIComponent(d));
-    } catch (e) {
-      return 'Y31mIjViUFs=';
-    }
-  }
-  decrypt(t) {
-    try {
-      if (!t || t.trim() === '') return '';
-      const d = decodeURIComponent(atob(t));
-      const p1 = this._p(d, 0);
-      const p2 = this._p(p1, 0);
-      return decodeURIComponent(atob(p2)) || '';
-    } catch (e) {
-      return '';
-    }
-  }
-  _p(t, e) {
-    try {
-      return Array.from(t).map((c, i) => {
-        const k = this._k[i % this._k.length];
-        const cc = c.charCodeAt(0);
-        const kc = k.charCodeAt(0);
-        return String.fromCharCode(e ? (cc + kc) % 256 : (cc - kc + 256) % 256);
-      }).join('');
-    } catch (e) {
-      return e ? 'Y31mIjViUFs=' : '';
-    }
-  }
-}
-function animateEncryption(element, finalText) {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*äüö";
-  let iterations = 0;
-  const maxIterations = 15;
-  let progress = 0;
-  const originalHeight = element.offsetHeight;
-  const originalWidth = element.offsetWidth;
-  element.style.whiteSpace = 'pre-wrap';
-  element.style.wordBreak = 'break-all';
-  element.style.minHeight = originalHeight + 'px';
-  element.style.width = originalWidth + 'px';
-  const interval = setInterval(() => {
-    let scrambled = '';
-    const remainingLength = finalText.length - progress;
-    scrambled += finalText.substring(0, progress);
-    for (let i = 0; i < remainingLength; i++) {
-      scrambled += chars[Math.floor(Math.random() * chars.length)];
-    }
-    element.innerText = scrambled;
-    iterations++;
-    progress = Math.floor(iterations / maxIterations * finalText.length);
-    if (iterations >= maxIterations) {
-      clearInterval(interval);
-      element.innerText = finalText;
-    }
-  }, 33);
-}
+
 function updateSecurityLevel(password) {
-  const level = document.getElementById('securityLevel');
-  let strength = 0;
-  if (password.length >= 8) strength += 20;
-  if (password.match(/[A-Z]/)) strength += 20;
-  if (password.match(/[a-z]/)) strength += 20;
-  if (password.match(/[0-9]/)) strength += 20;
-  if (password.match(/[^A-Za-z0-9]/)) strength += 20;
-  level.style.transition = 'width 0.5s ease-in-out, background 0.5s ease-in-out';
-  level.style.width = strength + '%';
-  level.style.background = strength < 40 ? 'linear-gradient(90deg, #ff0000, #ff3300)' : strength < 60 ? 'linear-gradient(90deg, #ffff00, #ffcc00)' : strength < 80 ? 'linear-gradient(90deg, #00ff00, #00cc00)' : 'linear-gradient(90deg, #00ff00, #00ffcc)';
+    const level = document.getElementById('securityLevel');
+    let strength = 0;
+    
+    if(password.length >= 8) strength += 20;
+    if(password.match(/[A-Z]/)) strength += 20;
+    if(password.match(/[a-z]/)) strength += 20;
+    if(password.match(/[0-9]/)) strength += 20;
+    if(password.match(/[^A-Za-z0-9]/)) strength += 20;
+    
+    level.style.transition = 'width 0.5s ease-in-out, background 0.5s ease-in-out';
+    level.style.width = strength + '%';
+    level.style.background = 
+        strength < 40 ? 'linear-gradient(90deg, #ff0000, #ff3300)' :
+        strength < 60 ? 'linear-gradient(90deg, #ffff00, #ffcc00)' :
+        strength < 80 ? 'linear-gradient(90deg, #00ff00, #00cc00)' :
+        'linear-gradient(90deg, #00ff00, #00ffcc)';
 }
-document.getElementById('password').addEventListener('input', e => {
-  updateSecurityLevel(e.target.value);
+
+document.getElementById('password').addEventListener('input', (e) => {
+    updateSecurityLevel(e.target.value);
 });
+
 function encrypt() {
-  const password = document.getElementById('password').value;
-  const input = document.getElementById('input').value;
-  const cipher = new DECYXCipher(password);
-  let encrypted = cipher.encrypt(input);
-  if (!encrypted || encrypted.trim() === '') {
-    encrypted = 'Y31mIjViUFs=';
-  }
-  animateEncryption(document.getElementById('result'), encrypted);
+    const password = document.getElementById('password').value;
+    const input = document.getElementById('input').value;
+    const cipher = new DECYXCipher(password);
+    
+    let encrypted = cipher.encrypt(input);
+    if (!encrypted || encrypted.trim() === '') {
+        encrypted = 'Y31mIjViUFs=';
+    }
+    
+    animateEncryption(document.getElementById('result'), encrypted);
 }
+
 function decrypt() {
-  const password = document.getElementById('password').value;
-  const input = document.getElementById('input').value;
-  const cipher = new DECYXCipher(password);
-  let decrypted = cipher.decrypt(input);
-  if (!decrypted || decrypted.trim() === '') {
-    decrypted = 'Decryption failed: Not in DECYX format, corrupt or incorrect password.';
-  }
-  const processedText = makeLinksClickable(decrypted);
-  const resultElement = document.getElementById('result');
-  animateEncryption(resultElement, processedText);
-  setTimeout(() => {
-    resultElement.innerHTML = processedText;
-  }, 33 * 15);
-}
-function makeLinksClickable(text) {
-  const urlPattern = /(https?:\/\/[^\s]+)/g;
-  return text.replace(urlPattern, function (url) {
-    return `<a href="${url}" target="_blank" class="decrypted-link" rel="noopener noreferrer">${url}</a>`;
-  });
-}
-function safeOpenUrl(url) {
-  try {
-    const parsed = new URL(url);
-    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
-      window.open(url, '_blank', 'noopener,noreferrer');
+    const password = document.getElementById('password').value;
+    const input = document.getElementById('input').value;
+    const cipher = new DECYXCipher(password);
+    
+    let decrypted = cipher.decrypt(input);
+    if (!decrypted || decrypted.trim() === '') {
+        decrypted = 'Decryption failed: Not in DECYX format, corrupt or incorrect password.';
     }
-  } catch (e) {
-    console.error('Invalid URL:', e);
-  }
+    
+    animateEncryption(document.getElementById('result'), decrypted);
 }
+
 function copyResult() {
-  const result = document.getElementById('result');
-  const textToCopy = result.innerText || result.textContent;
-  navigator.clipboard.writeText(textToCopy).then(() => {
-    const feedback = document.getElementById('copyFeedback');
-    feedback.classList.add('show');
-    setTimeout(() => {
-      feedback.classList.remove('show');
-    }, 2000);
-  });
+    const result = document.getElementById('result').innerText;
+    navigator.clipboard.writeText(result).then(() => {
+        const feedback = document.getElementById('copyFeedback');
+        feedback.classList.add('show');
+        setTimeout(() => {
+            feedback.classList.remove('show');
+        }, 2000);
+    });
 }
-document.addEventListener('DOMContentLoaded', function () {
-  animateHeader();
-  document.getElementById('result').addEventListener('click', function (e) {
-    if (e.target.classList.contains('decrypted-link')) {
-      e.preventDefault();
-      safeOpenUrl(e.target.href);
-    }
-  });
-});</script>
-</body>
-</html>
+
+animateHeader();
+</script>
+</body></html>
