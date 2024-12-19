@@ -1,6 +1,4 @@
----
 **DECYX has been discontinued.**
----
 
 # DECYX - Advanced Encryption System  
 **DECYX** is a cutting-edge encryption tool designed to protect your sensitive data with robust algorithms and an engaging cyberpunk interface.  
