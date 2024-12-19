@@ -1,7 +1,5 @@
 ---
-
-**DECYX has been discontinued.
-
+**DECYX has been discontinued.**
 ---
 
 # DECYX - Advanced Encryption System  
