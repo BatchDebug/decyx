@@ -36,4 +36,7 @@ We welcome contributions! Feel free to submit issues or pull requests.
 <p align="center">
 🌐 Visit <a href="https://batchdebug.github.io/decyx/">batchdebug.github.io/decyx/</a> to explore DECYX in action.  
 </p>
+
+---
+
 JUMzJThEJTBDJUMyJUI0JUMzJUI0JUMzJTg5JTBFJTE5JUMzJTkyJTE5JUMzJUJDJTExOCUxOTclMjU4JTE5NyUyNjYlMkY5JTIyNDAlMTM4Qi4lM0ElMTlBLiUyNCUxRTcwNSUwMSU0MCUyNiUxRiFFJTFFNyUzQyUyMiUyMCUyNCUzQyUxNyUyMiUxMzQlMTMlMUY4JTFFJTBGJTFEJUMzJUJDJTNDJTIyJUMzJTgwJTFDJUMzJThFJTBGJUMyJUJDJTBERCVDMiVBQSUyMCUzQSUyRiUwOQ==
